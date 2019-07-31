@@ -5,7 +5,7 @@ const quizSection = document.getElementById('quiz-section');
 
 startButton.addEventListener('click', startTest);
 
-    
+const product =     
 
 function startTest() {
     instructions.classList.add('hidden');

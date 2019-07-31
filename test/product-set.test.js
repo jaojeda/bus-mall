@@ -24,3 +24,15 @@ test('get random product', (assert) => {
     //assert
     assert.ok(products.includes(product));
 });
+
+test('remove products by id', (assert) => {
+    //arrange
+    const productList = new ProductList(products);
+    const usedProduct = products[0];
+
+    //act
+    productList.removeById(usedProduct.id);
+
+    //assert
+    assert.notOk(productList.list.includes(usedProduct));
+});
