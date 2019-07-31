@@ -7,7 +7,10 @@ const startButton = document.getElementById('start-button');
 const quizSection = document.getElementById('quiz-section');
 const buttonContainer = document.getElementById('button-container');
 const chosenButton = document.getElementsByClassName('product-choice');
+const messageDisplay = document.getElementById('user-message');
 // const resultSection = document.getElementById('result-table');
+
+let counter = 0;
 
 startButton.addEventListener('click', startTest);
 
@@ -20,9 +23,12 @@ generateFirstChoice();
 function startTest() {
     instructions.classList.add('hidden');
     quizSection.classList.remove('hidden');
+    messageDisplay.textContent = counter + ' / 25';
 }
 
 function generateFirstChoice() {
+    counter++;  
+
     const productOne = masterProductsList.getRandomProduct();
     standByList.push(productOne);
     const displayList = new ProductList(products);
@@ -45,6 +51,9 @@ function generateFirstChoice() {
 }
 
 function reloadChoices() {
+    counter++;
+    messageDisplay.textContent = counter + ' / 25';
+
     const displayList = new ProductList(products);
     for(let i = 0; i < standByList.length; i++) {
         displayList.removeById(standByList[i].id);

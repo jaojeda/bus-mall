@@ -40,7 +40,7 @@ header {
   top: 15px;
 }
 
-.user-message {
+#user-message {
   color: #A1ADC2;
   position: relative;
   left: 230px;
