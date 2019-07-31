@@ -10,4 +10,4 @@ const product =
 function startTest() {
     instructions.classList.add('hidden');
     quizSection.classList.remove('hidden');
-}
+};
