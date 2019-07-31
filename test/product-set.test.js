@@ -13,3 +13,14 @@ test('copies master product list', (assert) => {
     assert.notEqual(productList.list, products);
     assert.deepEqual(productList.list, products);
 });
+
+test('get random product', (assert) => {
+    //arrange
+    const productList = new ProductList(products);
+
+    //act
+    const product = productList.getRandomProduct();
+
+    //assert
+    assert.ok(products.includes(product));
+});

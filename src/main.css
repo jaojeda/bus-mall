@@ -88,7 +88,7 @@ section {
   position: relative;
 }
 
-.quiz-section {
+#quiz-section {
   justify-content: space-between;
   margin: 30px;
 }

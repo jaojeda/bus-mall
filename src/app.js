@@ -1,11 +1,13 @@
 
 const instructions = document.getElementById('instructions-box');
 const startButton = document.getElementById('start-button');
+const quizSection = document.getElementById('quiz-section');
 
-startButton.addEventListener('click', hideInstructions);
+startButton.addEventListener('click', startTest);
 
     
 
-function hideInstructions() {
+function startTest() {
     instructions.classList.add('hidden');
+    quizSection.classList.remove('hidden');
 }

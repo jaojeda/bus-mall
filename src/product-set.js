@@ -6,7 +6,7 @@ class ProductList {
     }
 
     getRandomProduct() {
-        const index = getRandomInt(this.list.lenght);
+        const index = getRandomInt(this.list.length);
         const product = this.list[index];
         return product;
     }
