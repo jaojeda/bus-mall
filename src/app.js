@@ -8,7 +8,7 @@ const quizSection = document.getElementById('quiz-section');
 const buttonContainer = document.getElementById('button-container');
 const chosenButton = document.getElementsByClassName('product-choice');
 const messageDisplay = document.getElementById('user-message');
-// const resultSection = document.getElementById('result-table');
+const resultSection = document.getElementById('result-table');
 
 let counter = 0;
 
@@ -82,5 +82,11 @@ function reloadChoices() {
     chosenButton[0].addEventListener('click', reloadChoices);
     chosenButton[1].addEventListener('click', reloadChoices);
     chosenButton[2].addEventListener('click', reloadChoices);
+
+    if(counter > 25) {
+        quizSection.classList.add('hidden');
+        resultSection.classList.remove('hidden');
+        messageDisplay.textContent = 'Thank you for your time!';
+    }
 
 }
