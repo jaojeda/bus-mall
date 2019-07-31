@@ -53,7 +53,7 @@ main, footer {
   position: relative;
 }
 
-.instructions-box {
+#instructions-box {
   width: 960px;
   height: 400px;
   background-color: #FBFAFA;
@@ -76,7 +76,7 @@ main, footer {
   line-height: 1.6;
 }
 
-.start-button {
+#start-button {
   position: relative;
   top: 100px;
   left: 430px;
@@ -135,4 +135,8 @@ thead {
 .footer {
   background-color: #A1ADC2;
   height: 30px;
+ }
+
+ .hidden {
+   display: none;
  }
