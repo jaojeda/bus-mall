@@ -32,3 +32,10 @@ test('products list is pulling correctly', (assert) => {
     //assert
     assert.deepEqual(masterProductsList, products);
 });
+
+test('create blank space for choice results', (assert) => {
+    //act
+    const results = store.getResults();
+    //assert
+    assert.deepEqual(results, []);
+});

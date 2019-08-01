@@ -19,6 +19,14 @@ const store = {
         }
         return masterProductsList;
     },
+    getResults() {
+        let results = store.get('results');
+        if(!results) {
+            results = [];
+        }
+        return results;
+    },
+
 };
 
 export default store;
