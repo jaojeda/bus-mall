@@ -39,3 +39,18 @@ test('create blank space for choice results', (assert) => {
     //assert
     assert.deepEqual(results, []);
 });
+
+test('save clicked choice', (assert) => {
+    const id = 'usb-octopus';
+    const expected = [{
+        id: 'usb-octopus',
+        clicked: 1,
+    }];
+
+    //act
+    store.saveChoice(id);
+    const results = store.getResults();
+
+    //assert
+    assert.deepEqual(results, expected);
+});

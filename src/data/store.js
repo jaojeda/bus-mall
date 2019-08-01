@@ -1,4 +1,5 @@
 import products from './products.js';
+import { findProduct } from '../util.js';
 
 const store = {
     storage: window.localStorage,
@@ -26,7 +27,21 @@ const store = {
         }
         return results;
     },
-
+    saveChoice(id) {
+        const results = store.getResults();
+        const addedResult = findProduct(results, id);
+        if(addedResult) {
+            addedResult.clicked++;
+        }
+        else {
+            const addedResult = {
+                id: id,
+                clicked: 1,
+            };
+            results.push(addedResult);
+        }
+        store.save('results', results);
+    }
 };
 
 export default store;
