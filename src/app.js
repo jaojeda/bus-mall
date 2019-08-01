@@ -100,7 +100,7 @@ function registerChoice(event) {
     reloadChoices();
 }
 
-function registerViews(id) {
+function registerViews() {
     for(let i = 0; i < standByList.length; i++) {
         store.saveViews(standByList[i].id);
     }
