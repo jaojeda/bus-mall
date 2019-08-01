@@ -40,6 +40,7 @@ function generateFirstChoice() {
     standByList.push(productThree);
     displayList.removeById(productThree.id);
 
+    registerViews();
 
     buttonContainer.appendChild(renderChoice(productOne));
     buttonContainer.appendChild(renderChoice(productTwo));
@@ -56,7 +57,8 @@ function reloadChoices() {
     for(let i = 0; i < standByList.length; i++) {
         displayList.removeById(standByList[i].id);
     }
-
+    
+    registerViews();
     standByList = [];
 
     const productOne = displayList.getRandomProduct();
@@ -96,4 +98,10 @@ function detectClick(chosenButton) {
 function registerChoice(event) {
     store.saveChoice(event.currentTarget.value);
     reloadChoices();
+}
+
+function registerViews(id) {
+    for(let i = 0; i < standByList.length; i++) {
+        store.saveViews(standByList[i].id);
+    }
 }

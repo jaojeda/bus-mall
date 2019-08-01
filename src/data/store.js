@@ -37,7 +37,7 @@ const store = {
             const addedResult = {
                 id: id,
                 clicked: 1,
-                views: 1,
+                views: 0,
             };
             results.push(addedResult);
         }
