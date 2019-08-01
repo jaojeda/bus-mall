@@ -1,4 +1,4 @@
-import store from './data/store.js';
+import { store, sessionStore } from './data/store.js';
 import ProductList from './product-set.js';
 import { renderChoice } from './render-choices.js';
 
@@ -97,11 +97,13 @@ function detectClick(chosenButton) {
 
 function registerChoice(event) {
     store.saveChoice(event.currentTarget.value);
+    sessionStore.saveChoice(event.currentTarget.value);
     reloadChoices();
 }
 
 function registerViews() {
     for(let i = 0; i < standByList.length; i++) {
         store.saveViews(standByList[i].id);
+        sessionStore.saveViews(standByList[i].id);
     }
 }
