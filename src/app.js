@@ -27,7 +27,7 @@ function startTest() {
 }
 
 function generateFirstChoice() {
-    counter++;  
+    counter++;
 
     const productOne = masterProductsList.getRandomProduct();
     standByList.push(productOne);
@@ -39,15 +39,13 @@ function generateFirstChoice() {
     const productThree = displayList.getRandomProduct();
     standByList.push(productThree);
     displayList.removeById(productThree.id);
-    
+
 
     buttonContainer.appendChild(renderChoice(productOne));
     buttonContainer.appendChild(renderChoice(productTwo));
     buttonContainer.appendChild(renderChoice(productThree));
 
-    chosenButton[0].addEventListener('click', reloadChoices);
-    chosenButton[1].addEventListener('click', reloadChoices);
-    chosenButton[2].addEventListener('click', reloadChoices);
+    detectClick(chosenButton);
 }
 
 function reloadChoices() {
@@ -60,7 +58,7 @@ function reloadChoices() {
     }
 
     standByList = [];
-    
+
     const productOne = displayList.getRandomProduct();
     standByList.push(productOne);
     displayList.removeById(productOne.id);
@@ -79,9 +77,7 @@ function reloadChoices() {
     buttonContainer.appendChild(renderChoice(productTwo));
     buttonContainer.appendChild(renderChoice(productThree));
 
-    chosenButton[0].addEventListener('click', reloadChoices);
-    chosenButton[1].addEventListener('click', reloadChoices);
-    chosenButton[2].addEventListener('click', reloadChoices);
+    detectClick(chosenButton);
 
     if(counter > 25) {
         quizSection.classList.add('hidden');
@@ -89,4 +85,15 @@ function reloadChoices() {
         messageDisplay.textContent = 'Thank you for your time!';
     }
 
+}
+
+function detectClick(chosenButton) {
+    for(let i = 0; i < chosenButton.length; i++) {
+        chosenButton[i].addEventListener('click', registerChoice);
+    }
+}
+
+function registerChoice(event) {
+    store.saveChoice(event.currentTarget.value);
+    reloadChoices();
 }
