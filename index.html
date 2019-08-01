@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Give us your thoughts</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+
+<body>
+    <div id="header-background"></div>
+    <header>
+        <img class="logo" src="./assets/bus-mall logo.png" alt="logo">
+        <h1 id="user-message">
+            Give us your thoughts
+        </h1>
+    </header>
+    <main>
+        <section>
+            <div id="instructions-box">
+                <h2 class="instruction-title">Thank you for your help!</h2>
+                <p class="instructions">At Bus-Mall we are interested in only giving you the best and latest of producs that are out there,
+                    but in order to do that we need your help. <br> When this test starts, all you have to do is select the image
+                    of the product that seems the most interesting out of the three you see in fornt of you. After you're done, we'll even let you know what 
+                    was the most intersteting to you. Press the start button when you're ready.
+                </p>
+                <button id="start-button">Start</button>
+            </div>
+        </section>
+        <section id="quiz-section" class="hidden">
+            <div id="button-container"></div>
+        </section>
+        <section id="result-table" class="hidden">
+            <h2>All done!</h2>
+            <h3>Here is what you chose:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prodcut</th>
+                        <th>Times Chosen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Canned Dragon Meant</td>
+                        <td class="times-clicked">2</td>
+                    </tr>
+                    <tr>
+                        <td>Tauntaun Sleeping Bag</td>
+                        <td class="times-clicked">5</td>
+                    </tr>
+                    <tr>
+                        <td>Watering Can</td>
+                        <td class="times-clicked">1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="restart-button">Take the test again!</button>
+        </section>
+
+    </main>
+    <footer>
+        <div class="footer"></div>
+    </footer>
+    <div id="footer-background"></div>
+    <script src="./src/app.js" type="module"></script>
+</body>
+
+</html>
