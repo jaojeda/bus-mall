@@ -45,7 +45,7 @@ test('save clicked choice', (assert) => {
     const expected = [{
         id: 'usb-octopus',
         clicked: 1,
-        views: 1,
+        views: 0,
     }];
     //act
     store.saveChoice(id);
