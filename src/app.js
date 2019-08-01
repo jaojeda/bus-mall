@@ -9,6 +9,7 @@ const buttonContainer = document.getElementById('button-container');
 const chosenButton = document.getElementsByClassName('product-choice');
 const messageDisplay = document.getElementById('user-message');
 const resultSection = document.getElementById('result-table');
+const restartButton = document.getElementById('restart-button');
 
 let counter = 0;
 
@@ -19,6 +20,8 @@ const masterProductsList = new ProductList(products);
 let standByList = [];
 
 generateFirstChoice();
+
+restartButton.addEventListener('click', restartTest);
 
 function startTest() {
     instructions.classList.add('hidden');
@@ -106,4 +109,13 @@ function registerViews() {
         store.saveViews(standByList[i].id);
         sessionStore.saveViews(standByList[i].id);
     }
+}
+
+function restartTest() {
+    counter = 0;
+    sessionStore.storage.clear();
+
+    messageDisplay.textContent = 'Give us your thoughts';
+    resultSection.classList.add('hidden');
+    instructions.classList.remove('hidden');
 }
