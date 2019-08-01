@@ -45,10 +45,26 @@ test('save clicked choice', (assert) => {
     const expected = [{
         id: 'usb-octopus',
         clicked: 1,
+        views: 1,
+    }];
+    //act
+    store.saveChoice(id);
+    const results = store.getResults();
+
+    //assert
+    assert.deepEqual(results, expected);
+});
+
+test('save views', (assert) => {
+    const id = 'usb-octopus';
+    const expected = [{
+        id: 'usb-octopus',
+        clicked: 0,
+        views: 1,
     }];
 
     //act
-    store.saveChoice(id);
+    store.saveViews(id);
     const results = store.getResults();
 
     //assert

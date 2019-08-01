@@ -37,8 +37,25 @@ const store = {
             const addedResult = {
                 id: id,
                 clicked: 1,
+                views: 1,
             };
             results.push(addedResult);
+        }
+        store.save('results', results);
+    },
+    saveViews(id) {
+        const results = store.getResults();
+        const addedView = findProduct(results, id);
+        if(addedView) {
+            addedView.views++;
+        }
+        else {
+            const addedView = {
+                id: id,
+                clicked: 0,
+                views: 1,
+            };
+            results.push(addedView);
         }
         store.save('results', results);
     }
