@@ -16,6 +16,7 @@ let counter = 0;
 startButton.addEventListener('click', startTest);
 
 const products = store.getProducts();
+
 const masterProductsList = new ProductList(products);
 let standByList = [];
 
@@ -112,7 +113,7 @@ function registerViews() {
 }
 
 function restartTest() {
-    counter = 0;
+    counter = 1;
     sessionStore.storage.clear();
 
     messageDisplay.textContent = 'Give us your thoughts';
