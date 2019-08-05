@@ -22,10 +22,10 @@
         <section>
             <div id="instructions-box">
                 <h2 class="instruction-title">Thank you for your help!</h2>
-                <p class="instructions">At Bus-Mall we are interested in only giving you the best and latest of producs that are out there,
+                <p class="instructions">At Bus-Mall we are interested in only giving you the best and latest of products that are out there,
                     but in order to do that we need your help. <br> When this test starts, all you have to do is select the image
-                    of the product that seems the most interesting out of the three you see in fornt of you. After you're done, we'll even let you know what 
-                    was the most intersteting to you. Press the start button when you're ready.
+                    of the product that seems the most interesting out of the three you see in front of you. After you're done, we'll even let you know what 
+                    was the most interesting to you. Press the start button when you're ready.
                 </p>
                 <button id="start-button">Start</button>
             </div>
@@ -33,10 +33,12 @@
         <section id="quiz-section" class="hidden">
             <div id="button-container"></div>
         </section>
-        <section id="result-table" class="hidden">
+        <section id="result-table">
             <h2>All done!</h2>
             <h3>Here is what you chose:</h3>
-            <table>
+            <div id="charts"></div>
+                <canvas id="session-choices"></canvas>
+            <!-- <table>
                 <thead>
                     <tr>
                         <th>Prodcut</th>
@@ -57,7 +59,7 @@
                         <td class="times-clicked">1</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
             <button id="restart-button">Take the test again!</button>
         </section>
 
